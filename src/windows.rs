@@ -23,6 +23,9 @@ pub fn get_printers() -> Vec<printer::Printer> {
         for line in lines {
             
             let printer_data: Vec<&str> = line.split_ascii_whitespace().collect();
+            if printer_data.len() == 0 {
+                continue;   
+            }
 
             let name = String::from(printer_data[1]);
             let system_name = String::from(printer_data[0]);
