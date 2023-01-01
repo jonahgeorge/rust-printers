@@ -43,7 +43,6 @@ pub fn print(printer_system_name: &str, file_path: &str) -> Result<bool, String>
         "Get-Content -Path \"{}\" |  Out-Printer -Name \"{}\"",
         file_path, printer_system_name
     );
-    println!("{}", script);
 
     let process = process::exec(Command::new("powershell").args([script]));
 
